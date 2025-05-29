@@ -18,7 +18,7 @@ void euler(double t0, double y0, double h, int n, string filename) {
     double t = t0;
     double y = y0;
     
-    file << fixed << setprecision(6);
+    file << fixed << setprecision(3);
     file << "t\tEuler\tAnalitica\tError\n";
     
     for (int i = 0; i <= n; i++) {
@@ -37,7 +37,7 @@ void rungeKutta4(double t0, double y0, double h, int n, string filename) {
     double t = t0;
     double y = y0;
     
-    file << fixed << setprecision(6);
+    file << fixed << setprecision(3);
     file << "t\tRK4\tAnalitica\tError\n";
     
     for (int i = 0; i <= n; i++) {
