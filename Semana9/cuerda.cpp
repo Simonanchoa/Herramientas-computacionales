@@ -7,9 +7,7 @@
 
 using namespace std;
 
-double Upasado[101];
-
-double condinicial(double array){
+double* condinicial(double* array){
     for (int i=0; i<=101;i++){
         if (i<51){
             array[i]=0.02*i;
@@ -21,4 +19,11 @@ double condinicial(double array){
         
 
     }
+    return array;
+}
+
+int main(){
+    double Upasado[101];
+    condinicial(Upasado);
+    cout << Upasado;
 }
