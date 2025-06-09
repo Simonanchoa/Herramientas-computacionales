@@ -33,4 +33,5 @@ int main(){
     double Upasado[101];
     condinicial(Upasado, "posicioninicial.txt");
     cout << Upasado;
+    
 }

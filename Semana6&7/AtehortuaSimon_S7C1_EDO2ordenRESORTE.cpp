@@ -25,7 +25,7 @@ double newton(double h, double t, string dadatos){
         datos_new << i/h << "\t" << y0 << "\n";
         y0=y0 +h*dv(y0) ;
     }
-    datos_new.close()
+    datos_new.close();
     return dadatos.txt
 
 }
