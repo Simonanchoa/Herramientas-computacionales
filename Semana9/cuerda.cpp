@@ -55,7 +55,8 @@ return futuro;
 }
 
 double* cambio(double* array, double* aray){
-    array=aray;
+    for (int i=1;i<100;i++)
+    array[i]=aray[i];
     return array;
 }
 
@@ -69,17 +70,17 @@ int main(){
     ofstream final("resultado.txt");
     final << fixed << setprecision(6);
     for (int j=0;j<101;j++){
-    final << Upasado[j];
+    final << Upasado[j] << " ";
     }
     final << endl;
     for (int j=0;j<101;j++){
-    final << Upresente[j];
+    final << Upresente[j] << " ";
     }
     final <<endl;
     for (int i=0; i<=298;i++){
         paso(Upasado, Upresente, Ufuturo);
-        for (int m=0; m<=298;m++){
-              final  << Ufuturo[m];
+        for (int m=0; m<=100;m++){
+              final  << Ufuturo[m] << " ";
         }
         final <<endl;
         cambio(Upasado,Upresente);
@@ -87,6 +88,5 @@ int main(){
     }
     final.close();
     
-    cout << Upasado << Upresente<< Ufuturo;
     return 0;
 }
