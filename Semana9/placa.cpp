@@ -8,7 +8,7 @@
 
 using namespace std;
 
-double** cond_inicial(double** placa){
+void cond_inicial(double placa[][100] ){
     for (int i=0; i<100; i++ ){
         for (int j=0; j<100; j++){
             placa[i][j]=50;
@@ -25,14 +25,13 @@ double** cond_inicial(double** placa){
     for (int i=0; i<100; i++ ){
 
         for (int j=0; j<100; j++){
-            archivo << placa[j][i];
+            archivo << placa[j][i]<< " ";
         }
         archivo << endl;
     }
- return placa;
 }
 
- double** paso(double** presente, double** futuro, double dt, double dx, double v){
+void paso(double presente[][100], double futuro[][100], double dt, double dx, double v){
     for(int i=0;i<100;i++){
         for (int j=0;j<100;j++){
             futuro[i][j]=presente[i][j];
@@ -43,13 +42,30 @@ double** cond_inicial(double** placa){
             futuro[i][j]=presente[i][j]+(v*dt/(dx*dx)*(presente[i+1][j]-2*presente[i][j]+presente[i-1][j]))+(v*dt/(dx*dx)*(presente[i][j+1]-2*presente[i][j]+presente[i][j-1]));
         }
     }
-    return futuro
  }
+
+#include <fstream>
+#include <iomanip>
+
+void guardar(double T[][100],string nombre_archivo) {
+    ofstream archivo(nombre_archivo);
+    archivo << fixed << setprecision(2);
+    for (int i = 0; i < 100; ++i) {
+        for (int j = 0; j < 100; ++j) {
+            archivo << T[i][j];
+            if (j < 99) archivo << ",";
+        }
+        archivo << "\n";
+    }
+    archivo.close();
+}
+
 
 int main (){
     double placa[100][100];
     double plate[100][100];
     cond_inicial(placa);
+    for (int i=)
     paso(placa, plate, 1, 0.01,0.0001);
     return 0;
 }
